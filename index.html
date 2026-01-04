@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name - Software Developer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+          <svg
+            class="sun"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+          <svg
+            class="moon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <div class="container">
+        <h1>Hi, I'm <span>Your Name</span></h1>
+        <p>Software Developer</p>
+        <p>
+          Building clean, efficient web applications with modern technologies.
+        </p>
+        <a href="#contact" class="cta">Get in Touch</a>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate developer focused on frontend/backend technologies. I
+          enjoy solving problems, learning new tools, and creating user-friendly
+          experiences. Currently working with JavaScript, React, Node.js, and
+          more.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>HTML & CSS</li>
+          <li>Git</li>
+          <li>Python</li>
+          <li>SQL</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project">
+            <h3>Project Title 1</h3>
+            <p>
+              Brief description: A web app built with React and Node.js for task
+              management.
+            </p>
+            <a href="https://github.com/yourusername/project1" target="_blank"
+              >GitHub</a
+            >
+            |
+            <a href="https://project1-live.com" target="_blank">Live Demo</a>
+          </div>
+          <div class="project">
+            <h3>Project Title 2</h3>
+            <p>
+              Brief description: E-commerce site using Next.js and Stripe
+              integration.
+            </p>
+            <a href="https://github.com/yourusername/project2" target="_blank"
+              >GitHub</a
+            >
+            |
+            <a href="https://project2-live.com" target="_blank">Live Demo</a>
+          </div>
+          <div class="project">
+            <h3>Project Title 3</h3>
+            <p>Brief description: API backend with Express and MongoDB.</p>
+            <a href="https://github.com/yourusername/project3" target="_blank"
+              >GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Email: your.email@example.com</p>
+        <p>
+          <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+          <a href="https://linkedin.com/in/yourusername" target="_blank"
+            >LinkedIn</a
+          >
+          |
+          <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      // Check for saved theme preference or default to light
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        body.classList.add("dark");
+      }
+
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        // Save preference
+        if (body.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+  </body>
+</html>
