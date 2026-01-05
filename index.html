@@ -150,7 +150,7 @@
       if (
         localStorage.getItem("theme") === "dark" ||
         (!localStorage.getItem("theme") &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
+          window.matchMedia("(prefers-color-scheme: light)").matches)
       ) {
         body.classList.add("dark");
       }

@@ -92,6 +92,25 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #333
+}
+
+body.dark #theme-toggle {
+    color: #fff; /* Dark mode: white icon */
+}
+
+#theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.1); /* Light hover effect in light mode */
+}
+
+body.dark #theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.1); /* Dark hover effect in dark mode */
+}
+
+#theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor; /* This makes the SVG use the color we set above */
 }
 
 #theme-toggle svg {
@@ -158,6 +177,7 @@ body.dark #hero span {
 
 body.dark .cta {
     background: #4da6ff;
+    color: #333;
 }
 
 body.dark .cta:hover {
