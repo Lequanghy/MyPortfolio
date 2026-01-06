@@ -29,75 +29,84 @@
       class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 z-50"
     >
       <nav
-        class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center"
+        class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center"
       >
-        <ul class="flex space-x-8">
-          <li>
-            <a
-              href="#about"
-              class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >About</a
-            >
-          </li>
-          <li>
-            <a
-              href="#skills"
-              class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Skills</a
-            >
-          </li>
-          <li>
-            <a
-              href="#projects"
-              class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="#contact"
-              class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Contact</a
-            >
-          </li>
-        </ul>
-        <!-- Dark Mode Toggle -->
-        <button
-          id="theme-toggle"
-          aria-label="Toggle dark mode"
-          class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+        <!-- Name/Logo on the LEFT -->
+        <a
+          class="text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition"
         >
-          <!-- Sun Icon (Light Mode) -->
-          <svg
-            class="w-5 h-5 sun block dark:hidden text-gray-900"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+          Quang Hy Le
+        </a>
+
+        <div class="flex items-center gap-8">
+          <!-- Navigation links -->
+          <ul class="hidden md:flex space-x-8">
+            <li>
+              <a
+                href="#about"
+                class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+                >Skills</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <!-- Dark Mode Toggle on the far right -->
+          <button
+            id="theme-toggle"
+            aria-label="Toggle dark mode"
+            class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            />
-          </svg>
-          <!-- Moon Icon (Dark Mode) -->
-          <svg
-            class="w-5 h-5 moon hidden dark:block text-gray-100"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-            />
-          </svg>
-        </button>
+            <svg
+              class="w-5 h-5 sun block dark:hidden text-gray-900"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <svg
+              class="w-5 h-5 moon hidden dark:block text-gray-100"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -106,11 +115,12 @@
       class="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-6"
     >
       <div class="text-center max-w-3xl">
-        <h1 class="text-5xl md:text-6xl font-bold mb-4">
-          Hi, I'm
-          <span class="text-blue-600 dark:text-blue-400">Quang Hy Le</span>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Hi, I'm a
+          <span class="text-blue-600 dark:text-blue-400"
+            >Software Developer</span
+          >
         </h1>
-        <p class="text-2xl md:text-3xl mb-6">I'm a Software Developer</p>
         <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
           Building clean, efficient web applications with modern technologies.
         </p>
