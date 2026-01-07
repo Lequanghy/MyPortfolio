@@ -38,9 +38,9 @@
           Quang Hy Le
         </a>
 
-        <div class="flex items-center gap-8">
+        <div class="hidden md:flex items-center gap-8">
           <!-- Navigation links -->
-          <ul class="hidden md:flex space-x-8">
+          <ul class="md:flex space-x-8">
             <li>
               <a
                 href="#about"
@@ -114,7 +114,124 @@
             </svg>
           </button>
         </div>
+        <!-- Hamburger Button (mobile only) -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-gray-900 dark:text-white focus:outline-none"
+        >
+          <svg
+            id="hamburger-icon"
+            class="w-8 h-8"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          <svg
+            id="close-icon"
+            class="w-8 h-8 hidden"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
       </nav>
+
+      <!-- Mobile Menu (dropdown) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800"
+      >
+        <ul class="flex flex-col px-6 py-4 space-y-4">
+          <li>
+            <a
+              href="#about"
+              class="block font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#experience"
+              class="block font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="block font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition"
+              >Contact</a
+            >
+          </li>
+          <!-- Dark Mode Toggle inside mobile menu -->
+          <li>
+            <button
+              id="theme-toggle-mobile"
+              aria-label="Toggle dark mode"
+              class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+            >
+              <svg
+                class="w-6 h-6 sun block dark:hidden text-gray-900"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <svg
+                class="w-6 h-6 moon hidden dark:block text-gray-100"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
     </header>
 
     <section
@@ -180,14 +297,15 @@
                 Megamation System Inc.
               </p>
               <p class="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-                Developed and delivered SaaS solutions for clients across diverse industries, including
-                higher education, healthcare, and manufacturing.
+                Developed and delivered SaaS solutions for clients across
+                diverse industries, including higher education, healthcare, and
+                manufacturing.
               </p>
               <p class="mt-4 text-gray-700 dark:text-gray-300 leading-relaxed">
-               <b>Technologies:</b>  Basic+, jQuery, HTML, JavaScript, Ionic Framework
+                <b>Technologies:</b> Basic+, jQuery, HTML, JavaScript, Ionic
+                Framework
               </p>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -336,6 +454,26 @@
     </footer>
 
     <script>
+      // Hamburger menu toggle
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const closeIcon = document.getElementById("close-icon");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        hamburgerIcon.classList.toggle("hidden");
+        closeIcon.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        });
+      });
       const toggle = document.getElementById("theme-toggle");
       const body = document.documentElement;
 
@@ -356,6 +494,13 @@
           localStorage.setItem("theme", "dark");
         } else {
           localStorage.setItem("theme", "light");
+        }
+
+        // Close mobile menu after toggle
+        if (!menu.classList.contains("hidden")) {
+          menu.classList.add("hidden");
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
         }
       });
     </script>
