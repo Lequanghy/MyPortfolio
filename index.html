@@ -187,7 +187,7 @@
               class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
             >
               <svg
-                class="w-6 h-6 sun block dark:hidden text-gray-900"
+                class="w-5 h-5 sun block dark:hidden text-gray-900"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -201,7 +201,7 @@
                 />
               </svg>
               <svg
-                class="w-6 h-6 moon hidden dark:block text-gray-100"
+                class="w-5 h-5 moon hidden dark:block text-gray-100"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -571,6 +571,7 @@
         });
       });
       const toggle = document.getElementById("theme-toggle");
+      const toggleMobile = document.getElementById("theme-toggle-mobile");
       const body = document.documentElement;
 
       // Check for saved theme preference or default to light
@@ -583,6 +584,24 @@
       }
 
       toggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        // Save preference
+        if (body.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+
+        // Close mobile menu after toggle
+        if (!menu.classList.contains("hidden")) {
+          menu.classList.add("hidden");
+          hamburgerIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+        }
+      });
+
+      toggleMobile.addEventListener("click", () => {
         body.classList.toggle("dark");
 
         // Save preference
