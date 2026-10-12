@@ -1,0 +1,26 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#ECFEFF"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <text x="72" y="88" fill="#0F172A" font-family="Arial, sans-serif" font-size="38" font-weight="700">CAR MARKETPLACE</text>
+  <text x="72" y="125" fill="#64748B" font-family="Arial, sans-serif" font-size="19">Find your next drive</text>
+  <rect x="72" y="172" width="1056" height="58" rx="29" fill="white" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="105" y="209" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Search vehicles...</text>
+  <rect x="930" y="183" width="170" height="36" rx="18" fill="#F97316"/>
+  <text x="975" y="207" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="700">Search</text>
+  <rect x="72" y="280" width="320" height="300" rx="20" fill="url(#card)" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="440" y="280" width="320" height="300" rx="20" fill="url(#card)" stroke="#E2E8F0" stroke-width="2"/>
+  <rect x="808" y="280" width="320" height="300" rx="20" fill="url(#card)" stroke="#E2E8F0" stroke-width="2"/>
+  <g transform="translate(110 335)"><path d="M18 98h205l-18-51c-4-11-14-18-26-18H76c-12 0-22 7-27 18L31 98H18Z" fill="#FB923C"/><rect x="43" y="55" width="74" height="25" rx="7" fill="#FFEDD5"/><rect x="125" y="55" width="56" height="25" rx="7" fill="#FFEDD5"/><circle cx="59" cy="101" r="17" fill="#1E293B"/><circle cx="180" cy="101" r="17" fill="#1E293B"/></g>
+  <g transform="translate(478 335)"><path d="M18 98h205l-18-51c-4-11-14-18-26-18H76c-12 0-22 7-27 18L31 98H18Z" fill="#38BDF8"/><rect x="43" y="55" width="74" height="25" rx="7" fill="#E0F2FE"/><rect x="125" y="55" width="56" height="25" rx="7" fill="#E0F2FE"/><circle cx="59" cy="101" r="17" fill="#1E293B"/><circle cx="180" cy="101" r="17" fill="#1E293B"/></g>
+  <g transform="translate(846 335)"><path d="M18 98h205l-18-51c-4-11-14-18-26-18H76c-12 0-22 7-27 18L31 98H18Z" fill="#8B5CF6"/><rect x="43" y="55" width="74" height="25" rx="7" fill="#EDE9FE"/><rect x="125" y="55" width="56" height="25" rx="7" fill="#EDE9FE"/><circle cx="59" cy="101" r="17" fill="#1E293B"/><circle cx="180" cy="101" r="17" fill="#1E293B"/></g>
+  <text x="108" y="548" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">2020 City Sedan</text><text x="476" y="548" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">2022 Urban SUV</text><text x="844" y="548" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">2021 Sport Coupe</text>
+</svg>
