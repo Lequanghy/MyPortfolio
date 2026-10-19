@@ -1,334 +1,781 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Quang Hy Le — programmer analyst and full-stack developer.">
-  <link rel="icon" href="src/images/profile.jpeg" type="image/png">
-  <title>Quang Hy Le | Programmer Analyst</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ["Inter", "sans-serif"] } } } };</script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, sans-serif;
-      background: #050505;
-    }
-
-    .glow-blue {
-      background: radial-gradient(50% 50% at 50% 50%, rgba(92, 195, 250, .3), transparent);
-    }
-
-    .glow-pink {
-      background: radial-gradient(50% 50% at 50% 50%, rgba(250, 117, 248, .25), transparent);
-    }
-
-    .glow-violet {
-      background: radial-gradient(50% 50% at 50% 50%, rgba(158, 110, 230, .28), transparent);
-    }
-
-    .grid-lines {
-      background-image: linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
-      background-size: 44px 44px;
-    }
-
-    .marquee {
-      animation: scroll 28s linear infinite;
-    }
-
-    @keyframes scroll {
-      from {
-        transform: translateX(0);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Quang Hy Le — programmer analyst and full-stack developer."
+    />
+    <link rel="icon" href="src/images/profile.jpeg" type="image/png" />
+    <title>Quang Hy Le | Programmer Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: { extend: { fontFamily: { sans: ["Inter", "sans-serif"] } } },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
       }
 
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .terminal-line {
-      animation: reveal 1s both;
-    }
-
-    .terminal-line:nth-child(2) {
-      animation-delay: .2s;
-    }
-
-    .terminal-line:nth-child(3) {
-      animation-delay: .4s;
-    }
-
-    .terminal-line:nth-child(4) {
-      animation-delay: .6s;
-    }
-
-    .terminal-line:nth-child(5) {
-      animation-delay: .8s;
-    }
-
-    @keyframes reveal {
-      from {
-        opacity: 0;
-        transform: translateX(-8px);
+      body {
+        font-family: Inter, sans-serif;
+        background: #050505;
       }
 
-      to {
-        opacity: 1;
-        transform: translateX(0);
+      .glow-blue {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(92, 195, 250, 0.3),
+          transparent
+        );
       }
-    }
 
-    .project-card {
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-    }
+      .glow-pink {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(250, 117, 248, 0.25),
+          transparent
+        );
+      }
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(147, 197, 253, .55);
-      background: rgba(255, 255, 255, .08);
-    }
-  </style>
-</head>
+      .glow-violet {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(158, 110, 230, 0.28),
+          transparent
+        );
+      }
 
-<body class="overflow-x-hidden text-white selection:bg-cyan-300 selection:text-black">
-  <header class="top-0 z-50 w-full border-b border-white/10 bg-black/75 backdrop-blur-xl">
-    <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation"><a
-        href="#hero" class="text-xl font-light tracking-tight text-white/90">Quang Hy Le</a>
-      <div class="hidden items-center gap-8 text-sm text-white/65 md:flex"><a class="transition hover:text-white"
-          href="#experience">Experience</a><a class="transition hover:text-white" href="#skills">Skills</a><a
-          class="transition hover:text-white" href="#projects">Projects</a><a
-          class="rounded-full border border-white/15 px-4 py-2 text-white transition hover:border-cyan-300/70 hover:text-cyan-200"
-          href="#contact">Let’s talk</a></div><button id="menu-button"
-        class="rounded-lg border border-white/15 p-2 text-white/80 md:hidden" aria-label="Open menu"
-        aria-expanded="false">☰</button>
-    </nav>
-    <div id="mobile-menu" class="hidden border-t border-white/10 bg-black px-5 py-4 md:hidden">
-      <div class="flex flex-col gap-4 text-sm text-white/75"><a href="#experience">Experience</a><a
-          href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Let’s talk</a></div>
-    </div>
-  </header>
-  <main id="hero">
-    <section class="relative isolate overflow-hidden pt-32 sm:pt-40">
-      <div class="grid-lines absolute inset-0 -z-20 opacity-50"></div>
-      <div class="glow-blue absolute -left-96 top-40 -z-10 h-[900px] w-[1500px] opacity-80"></div>
-      <div class="glow-pink absolute -right-[600px] top-16 -z-10 h-[1000px] w-[1700px] opacity-70"></div>
-      <div class="glow-violet absolute left-1/3 top-[-300px] -z-10 h-[1000px] w-[1400px] opacity-80"></div>
-      <div class="mx-auto max-w-6xl px-5 pb-20 lg:px-8">
-        <div class="grid items-center gap-12 lg:grid-cols-[1fr_350px]">
-          <div>
-            <p class="mb-5 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/75">Programmer analyst ·
-              Toronto</p>
-            <p class="mt-7 max-w-2xl text-base leading-8 text-white/55 sm:text-lg">I’m Quang Hy Le, a programmer analyst
-              at <a class="text-orange-300 underline decoration-orange-300/30 underline-offset-4 hover:text-orange-200"
-                href="https://www.linkedin.com/company/megamation/" target="_blank" rel="noreferrer">Megamation</a> with
-              a background in software and full-stack development. I enjoy solving
-              problems,
-              learning new tools, and creating user-friendly experiences. Currently working with BASIC+, TypeScript,
-              jQuery,
-              JavaScript, HTML, TailWind CSS, and more.</p>
-            <div class="mt-9 flex flex-wrap gap-4"><a href="#projects"
-                class="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-cyan-200">Explore
-                my work</a><a href="#contact"
-                class="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/60 hover:text-white">Get
-                in touch ↗</a></div>
-          </div>
-          <div class="relative mx-auto w-full max-w-[330px]" style="display:block">
-            <div class="absolute -inset-8 rounded-full bg-cyan-300/10 blur-3xl"></div>
-            <div
-              class="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[.06] p-3 shadow-2xl shadow-cyan-950/40">
-              <img src="src/images/profile.jpeg" alt="Quang Hy Le"
-                class="block aspect-square w-full rounded-2xl object-cover opacity-90">
-            </div>
-          </div>
+      .grid-lines {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+          );
+        background-size: 44px 44px;
+      }
+
+      .marquee {
+        animation: scroll 28s linear infinite;
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .terminal-line {
+        animation: reveal 1s both;
+      }
+
+      .terminal-line:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .terminal-line:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      .terminal-line:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+
+      .terminal-line:nth-child(5) {
+        animation-delay: 0.8s;
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateX(-8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .project-card {
+        transition:
+          transform 0.25s ease,
+          border-color 0.25s ease,
+          background 0.25s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(147, 197, 253, 0.55);
+        background: rgba(255, 255, 255, 0.08);
+      }
+    </style>
+  </head>
+
+  <body
+    class="overflow-x-hidden text-white selection:bg-cyan-300 selection:text-black"
+  >
+    <header
+      class="top-0 z-50 w-full border-b border-white/10 bg-black/75 backdrop-blur-xl"
+    >
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8"
+        aria-label="Main navigation"
+      >
+        <a href="#hero" class="text-xl font-light tracking-tight text-white/90"
+          >Quang Hy Le</a
+        >
+        <div class="hidden items-center gap-8 text-sm text-white/65 md:flex">
+          <a class="transition hover:text-white" href="#experience"
+            >Experience</a
+          ><a class="transition hover:text-white" href="#skills">Skills</a
+          ><a class="transition hover:text-white" href="#projects">Projects</a
+          ><a
+            class="rounded-full border border-white/15 px-4 py-2 text-white transition hover:border-cyan-300/70 hover:text-cyan-200"
+            href="#contact"
+            >Let’s talk</a
+          >
         </div>
-        <div
-          class="mt-16 overflow-hidden rounded-xl border border-white/10 bg-black/70 font-mono text-xs shadow-2xl shadow-blue-950/30 sm:text-sm">
-          <div class="flex items-center gap-2 border-b border-white/10 px-4 py-3"><span
-              class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span><span
-              class="h-2.5 w-2.5 rounded-full bg-yellow-300/80"></span><span
-              class="h-2.5 w-2.5 rounded-full bg-green-400/80"></span><span
-              class="ml-3 text-white/30">quang@portfolio:~</span></div>
-          <div class="space-y-2 px-5 py-5 text-white/65">
-            <div class="terminal-line"><span class="text-cyan-300">$</span> whoami</div>
-            <div class="terminal-line pl-4 text-white">quang.hy.le — programmer analyst</div>
-            <div class="terminal-line"><span class="text-cyan-300">$</span> stack --current</div>
-            <div class="terminal-line pl-4 text-emerald-300">BASIC+ · TypeScript · JavaScript · HTML · Tailwind CSS
-            </div>
-            <div class="terminal-line"><span class="text-cyan-300">$</span> <span class="animate-pulse">_</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="skills" class="overflow-hidden border-y border-white/10 bg-white/[.025] py-7"
-      aria-label="Technologies">
+        <button
+          id="menu-button"
+          class="rounded-lg border border-white/15 p-2 text-white/80 md:hidden"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </nav>
       <div
-        class="marquee flex w-max items-center gap-14 whitespace-nowrap text-2xl font-semibold tracking-tight text-white/25">
-        <span class="inline-flex items-center gap-3"><img src="src/images/js2.png" alt=""
-            class="h-7 w-7 object-contain">JavaScript</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/html.png" alt="" class="h-7 w-7 object-contain">HTML</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/css.png" alt=""
-            class="h-7 w-7 object-contain">CSS</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/python.png" alt="" class="h-7 w-7 object-contain">Python</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/sql.png" alt=""
-            class="h-7 w-7 object-contain">SQL</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/tailwind.svg" alt="" class="h-7 w-7 object-contain">Tailwind</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/laravel.png" alt=""
-            class="h-7 w-7 object-contain">Laravel</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/php.png" alt="" class="h-7 w-7 object-contain">PHP</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/github.png" alt=""
-            class="h-7 w-7 object-contain">GitHub</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/typescript.svg" alt="" class="h-7 w-7 object-contain">TypeScript</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/js2.png" alt=""
-            class="h-7 w-7 object-contain">JavaScript</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/html.png" alt="" class="h-7 w-7 object-contain">HTML</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/css.png" alt=""
-            class="h-7 w-7 object-contain">CSS</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/python.png" alt="" class="h-7 w-7 object-contain">Python</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/sql.png" alt=""
-            class="h-7 w-7 object-contain">SQL</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/tailwind.svg" alt="" class="h-7 w-7 object-contain">Tailwind</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/laravel.png" alt=""
-            class="h-7 w-7 object-contain">Laravel</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/php.png" alt="" class="h-7 w-7 object-contain">PHP</span><span
-          class="inline-flex items-center gap-3"><img src="src/images/github.png" alt=""
-            class="h-7 w-7 object-contain">GitHub</span><span class="inline-flex items-center gap-3"><img
-            src="src/images/typescript.svg" alt="" class="h-7 w-7 object-contain">TypeScript</span>
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-black px-5 py-4 md:hidden"
+      >
+        <div class="flex flex-col gap-4 text-sm text-white/75">
+          <a href="#experience">Experience</a><a href="#skills">Skills</a
+          ><a href="#projects">Projects</a><a href="#contact">Let’s talk</a>
+        </div>
       </div>
-    </section>
-    <section id="experience" class="relative mx-auto max-w-6xl px-5 py-24 lg:px-8 lg:py-32">
-      <div class="glow-violet absolute left-[-500px] top-0 -z-10 h-[900px] w-full opacity-50"></div>
-      <p class="mb-4 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/70">01 / Experience</p>
-      <h2 class="max-w-6xl text-4xl font-semibold tracking-[-.04em] sm:text-6xl">Building <span class="text-yellow-400">
-          impactful </span> solutions</h2>
-      <div class="mt-16 border-t border-white/15">
-        <article class="grid gap-6 border-b border-white/10 py-8 md:grid-cols-[180px_1fr_160px] md:gap-10"><time
-            class="text-sm text-white/40">May 2022 — Present</time>
-          <div>
-            <h3 class="text-2xl font-semibold">Programmer Analyst</h3>
-            <p class="mt-1 text-cyan-200/70">Megamation System Inc.</p>
-            <p class="mt-5 max-w-2xl leading-7 text-white/55">Develop and deliver SaaS solutions for clients across
-              higher education, healthcare, and manufacturing. Translate day-to-day operational needs into reliable,
-              approachable software.</p>
+    </header>
+    <main id="hero">
+      <section class="relative isolate overflow-hidden pt-32 sm:pt-40">
+        <div class="grid-lines absolute inset-0 -z-20 opacity-50"></div>
+        <div
+          class="glow-blue absolute -left-96 top-40 -z-10 h-[900px] w-[1500px] opacity-80"
+        ></div>
+        <div
+          class="glow-pink absolute -right-[600px] top-16 -z-10 h-[1000px] w-[1700px] opacity-70"
+        ></div>
+        <div
+          class="glow-violet absolute left-1/3 top-[-300px] -z-10 h-[1000px] w-[1400px] opacity-80"
+        ></div>
+        <div class="mx-auto max-w-6xl px-5 pb-20 lg:px-8">
+          <div class="grid items-center gap-12 lg:grid-cols-[1fr_350px]">
+            <div>
+              <p
+                class="mb-5 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/75"
+              >
+                Programmer analyst · Toronto
+              </p>
+              <p
+                class="mt-7 max-w-2xl text-base leading-8 text-white/55 sm:text-lg"
+              >
+                I’m Quang Hy Le, a programmer analyst at
+                <a
+                  class="text-orange-300 underline decoration-orange-300/30 underline-offset-4 hover:text-orange-200"
+                  href="https://www.linkedin.com/company/megamation/"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Megamation</a
+                >
+                with a background in software and full-stack development. I
+                enjoy solving problems, learning new tools, and creating
+                user-friendly experiences. Currently working with BASIC+,
+                TypeScript, jQuery, JavaScript, HTML, TailWind CSS, and more.
+              </p>
+              <div class="mt-9 flex flex-wrap gap-4">
+                <a
+                  href="#projects"
+                  class="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-cyan-200"
+                  >Explore my work</a
+                ><a
+                  href="#contact"
+                  class="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/60 hover:text-white"
+                  >Get in touch ↗</a
+                >
+              </div>
+            </div>
+            <div
+              class="relative mx-auto w-full max-w-[330px]"
+              style="display: block"
+            >
+              <div
+                class="absolute -inset-8 rounded-full bg-cyan-300/10 blur-3xl"
+              ></div>
+              <div
+                class="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[.06] p-3 shadow-2xl shadow-cyan-950/40"
+              >
+                <img
+                  src="src/images/profile.jpeg"
+                  alt="Quang Hy Le"
+                  class="block aspect-square w-full rounded-2xl object-cover opacity-90"
+                />
+              </div>
+            </div>
           </div>
-          <p class="text-sm leading-6 text-white/40">Basic+<br>jQuery<br>HTML · JavaScript<br>Ionic Framework</br>AI
-            Agents</p>
-        </article>
-      </div>
-    </section>
-    <section id="projects" class="relative bg-white/[.025] px-5 py-24 lg:px-8 lg:py-32">
-      <div class="mx-auto max-w-6xl">
-        <p class="mb-4 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/70">02 / Projects</p>
-        <div class="flex flex-wrap items-end justify-between gap-6">
-          <h2 class="text-4xl font-semibold tracking-[-.04em] sm:text-6xl">A few things I’ve made.</h2><a
-            href="https://github.com/lequanghy" target="_blank" rel="noreferrer"
-            class="text-sm text-white/50 underline underline-offset-4 hover:text-white">View GitHub ↗</a>
+          <div
+            class="mt-16 overflow-hidden rounded-xl border border-white/10 bg-black/70 font-mono text-xs shadow-2xl shadow-blue-950/30 sm:text-sm"
+          >
+            <div
+              class="flex items-center gap-2 border-b border-white/10 px-4 py-3"
+            >
+              <span class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span
+              ><span class="h-2.5 w-2.5 rounded-full bg-yellow-300/80"></span
+              ><span class="h-2.5 w-2.5 rounded-full bg-green-400/80"></span
+              ><span class="ml-3 text-white/30">quang@portfolio:~</span>
+            </div>
+            <div class="space-y-2 px-5 py-5 text-white/65">
+              <div class="terminal-line">
+                <span class="text-cyan-300">$</span> whoami
+              </div>
+              <div class="terminal-line pl-4 text-white">
+                quang.hy.le — programmer analyst
+              </div>
+              <div class="terminal-line">
+                <span class="text-cyan-300">$</span> stack --current
+              </div>
+              <div class="terminal-line pl-4 text-emerald-300">
+                BASIC+ · TypeScript · JavaScript · HTML · Tailwind CSS
+              </div>
+              <div class="terminal-line">
+                <span class="text-cyan-300">$</span>
+                <span class="animate-pulse">_</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mt-14 grid gap-5 md:grid-cols-3">
-          <article class="project-card rounded-2xl border border-white/10 bg-white/[.045]">
-            <img src="src/images/image-converter.png" alt="Image Converter preview"
-              class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover" />
-            <div class="p-7">
-              <p class="text-sm text-cyan-200/70">01 · Web tool</p>
-              <h3 class="mt-4 text-2xl font-semibold">Image Converter</h3>
-              <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65"><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/html.png" alt="" class="h-4 w-4 object-contain">HTML</span><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/tailwind.svg" alt="" class="h-4 w-4 object-contain">Tailwind CSS</span><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/python.png" alt="" class="h-4 w-4 object-contain">Python</span></div>
-              <p class="mt-4 min-h-20 leading-7 text-white/50">A browser-based image conversion tool for quickly
-                converting HEIC/HEIF files to JPG directly in the browser, powered by
-                Pillow for efficient local processing and a simple, reliable workflow.</p>
-              <div class="mt-7 flex gap-5 text-sm"><a href="https://github.com/Lequanghy/heic-to-jpg-web"
-                  target="_blank" rel="noreferrer" class="text-white underline underline-offset-4">GitHub ↗</a><a
-                  href="https://heic-to-jpg-web.onrender.com/" target="_blank" rel="noreferrer"
-                  class="text-cyan-200 underline underline-offset-4">Live demo ↗</a></div>
+      </section>
+      <section
+        id="skills"
+        class="overflow-hidden border-y border-white/10 bg-white/[.025] py-7"
+        aria-label="Technologies"
+      >
+        <div
+          class="marquee flex w-max items-center gap-14 whitespace-nowrap text-2xl font-semibold tracking-tight text-white/25"
+        >
+          <span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/js2.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />JavaScript</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/html.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />HTML</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/css.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />CSS</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/python.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />Python</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/sql.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />SQL</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/tailwind.svg"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />Tailwind</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/laravel.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />Laravel</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/php.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />PHP</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/github.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />GitHub</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/typescript.svg"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />TypeScript</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/js2.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />JavaScript</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/html.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />HTML</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/css.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />CSS</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/python.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />Python</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/sql.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />SQL</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/tailwind.svg"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />Tailwind</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/laravel.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />Laravel</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/php.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />PHP</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/github.png"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />GitHub</span
+          ><span class="inline-flex items-center gap-3"
+            ><img
+              src="src/images/typescript.svg"
+              alt=""
+              class="h-7 w-7 object-contain"
+            />TypeScript</span
+          >
+        </div>
+      </section>
+      <section
+        id="experience"
+        class="relative mx-auto max-w-6xl px-5 py-24 lg:px-8 lg:py-32"
+      >
+        <div
+          class="glow-violet absolute left-[-500px] top-0 -z-10 h-[900px] w-full opacity-50"
+        ></div>
+        <p
+          class="mb-4 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/70"
+        >
+          01 / Experience
+        </p>
+        <h2
+          class="max-w-6xl text-4xl font-semibold tracking-[-.04em] sm:text-6xl"
+        >
+          Building <span class="text-yellow-400"> impactful </span> solutions
+        </h2>
+        <div class="mt-16 border-t border-white/15">
+          <article
+            class="grid gap-6 border-b border-white/10 py-8 md:grid-cols-[180px_1fr_160px] md:gap-10"
+          >
+            <time class="text-sm text-white/40">May 2022 — Present</time>
+            <div>
+              <h3 class="text-2xl font-semibold">Programmer Analyst</h3>
+              <p class="mt-1 text-cyan-200/70">Megamation System Inc.</p>
+              <p class="mt-5 max-w-2xl leading-7 text-white/55">
+                Develop and deliver SaaS solutions for clients across higher
+                education, healthcare, and manufacturing. Translate day-to-day
+                operational needs into reliable, approachable software.
+              </p>
             </div>
-          </article>
-          <article class="project-card rounded-2xl border border-white/10 bg-white/[.045]">
-            <img src="src/images/car-ecommerce.svg" alt="Car E-Commerce preview"
-              class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover" />
-            <div class="p-7">
-              <p class="text-sm text-cyan-200/70">02 · E-commerce</p>
-              <h3 class="mt-4 text-2xl font-semibold">Car E-Commerce</h3>
-              <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65"><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/laravel.png" alt="" class="h-4 w-4 object-contain">Laravel</span><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/php.png" alt="" class="h-4 w-4 object-contain">PHP</span><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/sqlite.svg" alt="" class="h-4 w-4 object-contain">SQLite</span></div>
-              <p class="mt-4 min-h-20 leading-7 text-white/50">A dynamic car marketplace application built with Laravel,
-                PHP, and SQLite, designed for browsing, listing, and managing
-                vehicle inventory efficiently.</p>
-              <div class="mt-7 flex gap-5 text-sm"><a href="https://github.com/Lequanghy/CarECommerce" target="_blank"
-                  rel="noreferrer" class="text-white underline underline-offset-4">GitHub ↗</a></div>
-            </div>
-          </article>
-          <article class="project-card rounded-2xl border border-white/10 bg-white/[.045]">
-            <img src="src/images/pdf-utilities.png" alt="PDF Utilities preview"
-              class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover" />
-            <div class="p-7">
-              <p class="text-sm text-cyan-200/70">03 · Productivity</p>
-              <h3 class="mt-4 text-2xl font-semibold">PDF Utilities</h3>
-              <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65"><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/svelte.jpeg" alt="" class="h-4 w-4 object-contain">Svelte</span><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/tailwind.svg" alt="" class="h-4 w-4 object-contain">Tailwind CSS</span><span
-                  class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"><img
-                    src="src/images/js2.png" alt="" class="h-4 w-4 object-contain">JavaScript</span></div>
-              <p class="mt-4 min-h-20 leading-7 text-white/50">Built with Svelte and Tailwind CSS, PDF Utilities is a
-                lightweight local productivity tool for merging, splitting, and compressing PDF files.</p>
-              <div class="mt-7 flex gap-5 text-sm"><a href="https://github.com/Lequanghy/pdf-utility" target="_blank"
-                  rel="noreferrer" class="text-white underline underline-offset-4">GitHub ↗</a><a
-                  href="https://pdf-utility-9tma.onrender.com/" target="_blank" rel="noreferrer"
-                  class="text-cyan-200 underline underline-offset-4">Live demo ↗</a></div>
-            </div>
-
+            <p class="text-sm leading-6 text-white/40">
+              Basic+<br />jQuery<br />HTML · JavaScript<br />Ionic Framework<br />AI
+              Agents
+            </p>
           </article>
         </div>
+      </section>
+      <section
+        id="projects"
+        class="relative bg-white/[.025] px-5 py-24 lg:px-8 lg:py-32"
+      >
+        <div class="mx-auto max-w-6xl">
+          <p
+            class="mb-4 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/70"
+          >
+            02 / Projects
+          </p>
+          <div class="flex flex-wrap items-end justify-between gap-6">
+            <h2 class="text-4xl font-semibold tracking-[-.04em] sm:text-6xl">
+              A few things I’ve made.
+            </h2>
+            <a
+              href="https://github.com/lequanghy"
+              target="_blank"
+              rel="noreferrer"
+              class="text-sm text-white/50 underline underline-offset-4 hover:text-white"
+              >View GitHub ↗</a
+            >
+          </div>
+          <div class="mt-14 grid gap-5 md:grid-cols-3">
+            <article
+              class="project-card rounded-2xl border border-white/10 bg-white/[.045]"
+            >
+              <img
+                src="src/images/receipt-scanner.png"
+                alt="Image Converter preview"
+                class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold">Receipt Scanner</h3>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65">
+                  <span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/html.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />HTML</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/js2.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />JavaScript</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    >AI</span
+                  >
+                </div>
+                <p class="mt-4 min-h-20 leading-7 text-white/50">
+                  A browser-based receipt scanner that turns receipt photos into
+                  structured data. Upload an image or use your camera to extract
+                  dates, line items, amounts, types, and categories with local
+                  Ollama or cloud-based Gemini AI.
+                </p>
+                <div class="mt-7 flex gap-5 text-sm">
+                  <a
+                    href="https://github.com/Lequanghy/receipt-scanner"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-white underline underline-offset-4"
+                    >GitHub ↗</a
+                  ><a
+                    href="https://heic-to-jpg-web.onrender.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-cyan-200 underline underline-offset-4"
+                    >Live demo ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article
+              class="project-card rounded-2xl border border-white/10 bg-white/[.045]"
+            >
+              <img
+                src="src/images/image-converter.png"
+                alt="Image Converter preview"
+                class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold">Image Converter</h3>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65">
+                  <span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/html.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />HTML</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/tailwind.svg"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />Tailwind CSS</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/python.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />Python</span
+                  >
+                </div>
+                <p class="mt-4 min-h-20 leading-7 text-white/50">
+                  A browser-based image conversion tool for quickly converting
+                  HEIC/HEIF files to JPG directly in the browser, powered by
+                  Pillow for efficient local processing and a simple, reliable
+                  workflow.
+                </p>
+                <div class="mt-7 flex gap-5 text-sm">
+                  <a
+                    href="https://github.com/Lequanghy/heic-to-jpg-web"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-white underline underline-offset-4"
+                    >GitHub ↗</a
+                  ><a
+                    href="https://heic-to-jpg-web.onrender.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-cyan-200 underline underline-offset-4"
+                    >Live demo ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article
+              class="project-card rounded-2xl border border-white/10 bg-white/[.045]"
+            >
+              <img
+                src="src/images/car-ecommerce.svg"
+                alt="Car E-Commerce preview"
+                class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold">Car E-Commerce</h3>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65">
+                  <span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/laravel.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />Laravel</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/php.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />PHP</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/sqlite.svg"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />SQLite</span
+                  >
+                </div>
+                <p class="mt-4 min-h-20 leading-7 text-white/50">
+                  A dynamic car marketplace application built with Laravel, PHP,
+                  and SQLite, designed for browsing, listing, and managing
+                  vehicle inventory efficiently.
+                </p>
+                <div class="mt-7 flex gap-5 text-sm">
+                  <a
+                    href="https://github.com/Lequanghy/CarECommerce"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-white underline underline-offset-4"
+                    >GitHub ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+            <article
+              class="project-card rounded-2xl border border-white/10 bg-white/[.045]"
+            >
+              <img
+                src="src/images/pdf-utilities.png"
+                alt="PDF Utilities preview"
+                class="mb-5 h-36 w-full rounded-xl border border-white/10 object-cover"
+              />
+              <div class="p-6">
+                <h3 class="text-2xl font-semibold">PDF Utilities</h3>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs text-white/65">
+                  <span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/svelte.jpeg"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />Svelte</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/tailwind.svg"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />Tailwind CSS</span
+                  ><span
+                    class="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.06] px-3 py-1"
+                    ><img
+                      src="src/images/js2.png"
+                      alt=""
+                      class="h-4 w-4 object-contain"
+                    />JavaScript</span
+                  >
+                </div>
+                <p class="mt-4 min-h-20 leading-7 text-white/50">
+                  Built with Svelte and Tailwind CSS, PDF Utilities is a
+                  lightweight local productivity tool for merging, splitting,
+                  and compressing PDF files.
+                </p>
+                <div class="mt-7 flex gap-5 text-sm">
+                  <a
+                    href="https://github.com/Lequanghy/pdf-utility"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-white underline underline-offset-4"
+                    >GitHub ↗</a
+                  ><a
+                    href="https://pdf-utility-9tma.onrender.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-cyan-200 underline underline-offset-4"
+                    >Live demo ↗</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        id="contact"
+        class="relative overflow-hidden px-5 py-24 lg:px-8 lg:py-32"
+      >
+        <div
+          class="glow-blue absolute -right-96 top-0 -z-10 h-[800px] w-[1300px] opacity-50"
+        ></div>
+        <div class="mx-auto max-w-4xl text-center">
+          <p
+            class="mb-4 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/70"
+          >
+            03 / Contact
+          </p>
+          <h2 class="text-4xl font-semibold tracking-[-.04em] sm:text-6xl">
+            Have a good problem?
+          </h2>
+          <p class="mx-auto mt-6 max-w-xl leading-7 text-white/50">
+            I’m always open to conversations about software, thoughtful
+            products, and interesting opportunities.
+          </p>
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="mx-auto mt-12 grid max-w-2xl gap-4 text-left"
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="2883228c-789b-41b7-94fd-d07d3bf381ee"
+            /><input type="hidden" name="redirect" value="#contact" /><input
+              name="name"
+              type="text"
+              placeholder="Your name"
+              required
+              class="rounded-xl border border-white/15 bg-white/[.06] px-5 py-4 text-white outline-none placeholder:text-white/30 focus:border-cyan-300/70"
+            /><input
+              name="email"
+              type="email"
+              placeholder="Your email"
+              required
+              class="rounded-xl border border-white/15 bg-white/[.06] px-5 py-4 text-white outline-none placeholder:text-white/30 focus:border-cyan-300/70"
+            /><textarea
+              name="message"
+              rows="5"
+              placeholder="Tell me a little about it"
+              required
+              class="rounded-xl border border-white/15 bg-white/[.06] px-5 py-4 text-white outline-none placeholder:text-white/30 focus:border-cyan-300/70"
+            ></textarea
+            ><button
+              class="mt-2 rounded-xl bg-white px-6 py-4 font-semibold text-black transition hover:bg-cyan-200"
+              type="submit"
+            >
+              Send message ↗
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t border-white/10 bg-black px-5 py-10 lg:px-8">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 text-sm text-white/40 sm:flex-row"
+      >
+        <p>© 2026 Quang Hy Le. Built with curiosity.</p>
+        <div class="flex gap-6">
+          <a class="hover:text-white" href="mailto:lequanghy1998@yahoo.ca"
+            >Email</a
+          ><a
+            class="hover:text-white"
+            href="https://github.com/lequanghy"
+            target="_blank"
+            rel="noreferrer"
+            >GitHub ↗</a
+          ><a
+            class="hover:text-white"
+            href="https://www.linkedin.com/in/quang-hy-le/"
+            target="_blank"
+            rel="noreferrer"
+            >LinkedIn ↗</a
+          >
+        </div>
       </div>
-    </section>
-    <section id="contact" class="relative overflow-hidden px-5 py-24 lg:px-8 lg:py-32">
-      <div class="glow-blue absolute -right-96 top-0 -z-10 h-[800px] w-[1300px] opacity-50"></div>
-      <div class="mx-auto max-w-4xl text-center">
-        <p class="mb-4 text-sm font-semibold uppercase tracking-[.28em] text-cyan-200/70">03 / Contact</p>
-        <h2 class="text-4xl font-semibold tracking-[-.04em] sm:text-6xl">Have a good problem?</h2>
-        <p class="mx-auto mt-6 max-w-xl leading-7 text-white/50">I’m always open to conversations about software,
-          thoughtful products, and interesting opportunities.</p>
-        <form action="https://api.web3forms.com/submit" method="POST"
-          class="mx-auto mt-12 grid max-w-2xl gap-4 text-left"><input type="hidden" name="access_key"
-            value="2883228c-789b-41b7-94fd-d07d3bf381ee"><input type="hidden" name="redirect" value="#contact"><input
-            name="name" type="text" placeholder="Your name" required
-            class="rounded-xl border border-white/15 bg-white/[.06] px-5 py-4 text-white outline-none placeholder:text-white/30 focus:border-cyan-300/70"><input
-            name="email" type="email" placeholder="Your email" required
-            class="rounded-xl border border-white/15 bg-white/[.06] px-5 py-4 text-white outline-none placeholder:text-white/30 focus:border-cyan-300/70"><textarea
-            name="message" rows="5" placeholder="Tell me a little about it" required
-            class="rounded-xl border border-white/15 bg-white/[.06] px-5 py-4 text-white outline-none placeholder:text-white/30 focus:border-cyan-300/70"></textarea><button
-            class="mt-2 rounded-xl bg-white px-6 py-4 font-semibold text-black transition hover:bg-cyan-200"
-            type="submit">Send message ↗</button></form>
-      </div>
-    </section>
-  </main>
-  <footer class="border-t border-white/10 bg-black px-5 py-10 lg:px-8">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-5 text-sm text-white/40 sm:flex-row">
-      <p>© 2026 Quang Hy Le. Built with curiosity.</p>
-      <div class="flex gap-6"><a class="hover:text-white" href="mailto:lequanghy1998@yahoo.ca">Email</a><a
-          class="hover:text-white" href="https://github.com/lequanghy" target="_blank" rel="noreferrer">GitHub ↗</a><a
-          class="hover:text-white" href="https://www.linkedin.com/in/quang-hy-le/" target="_blank"
-          rel="noreferrer">LinkedIn ↗</a></div>
-    </div>
-  </footer>
-  <script>const menuButton = document.getElementById('menu-button'); const mobileMenu = document.getElementById('mobile-menu'); menuButton.addEventListener('click', () => { const open = mobileMenu.classList.toggle('hidden') === false; menuButton.setAttribute('aria-expanded', open); menuButton.textContent = open ? '×' : '☰'; }); mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = '☰'; }));</script>
-</body>
-
+    </footer>
+    <script>
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuButton.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("hidden") === false;
+        menuButton.setAttribute("aria-expanded", open);
+        menuButton.textContent = open ? "×" : "☰";
+      });
+      mobileMenu.querySelectorAll("a").forEach((link) =>
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.textContent = "☰";
+        }),
+      );
+    </script>
+  </body>
 </html>
